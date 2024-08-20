@@ -9,8 +9,11 @@ export class StringCalculatorService {
 
 
   add(numbers: string): number {
-    if (numbers === "") return 0;
-    return parseInt(numbers); // Now handles a single number
+    if (numbers === "") 
+      return 0;
+
+    const numArray = numbers.split(",");
+    return numArray.reduce((sum, current) => sum + parseInt(current), 0); // Handle comma-separated numbers 
   }
- 
+
 }

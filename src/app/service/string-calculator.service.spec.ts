@@ -21,4 +21,8 @@ describe('StringCalculatorService', () => {
   it('should return the number itself if only one number is in the string', () => {
     expect(service.add("1")).toBe(1);
   });
+
+  it('should return the sum of two comma-separated numbers', () => {
+    expect(service.add("1,2")).toBe(3);
+});
 });
