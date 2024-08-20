@@ -24,5 +24,9 @@ describe('StringCalculatorService', () => {
 
   it('should return the sum of two comma-separated numbers', () => {
     expect(service.add("1,2")).toBe(3);
-});
+  });
+
+  it('should handle newlines as delimiters', () => {
+    expect(service.add("1\n2,3")).toBe(6);
+  });
 });

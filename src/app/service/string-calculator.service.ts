@@ -12,7 +12,9 @@ export class StringCalculatorService {
     if (numbers === "") 
       return 0;
 
-    const numArray = numbers.split(",");
+
+    const delimiter = /,|\n/;
+    const numArray = numbers.split(delimiter);
     return numArray.reduce((sum, current) => sum + parseInt(current), 0); // Handle comma-separated numbers 
   }
 
