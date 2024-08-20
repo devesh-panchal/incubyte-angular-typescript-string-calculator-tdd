@@ -17,4 +17,8 @@ describe('StringCalculatorService', () => {
   it('should return 0 for an empty string', () => {
     expect(service.add("")).toBe(0);
   });
+
+  it('should return the number itself if only one number is in the string', () => {
+    expect(service.add("1")).toBe(1);
+  });
 });

@@ -9,7 +9,8 @@ export class StringCalculatorService {
 
 
   add(numbers: string): number {
-    return 0; // Hardcoded to pass the first test
+    if (numbers === "") return 0;
+    return parseInt(numbers); // Now handles a single number
   }
  
 }
