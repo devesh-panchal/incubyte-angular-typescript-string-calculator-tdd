@@ -12,6 +12,18 @@ export class StringCalculatorService {
     if (numbers === "")
       return 0;
 
+    const [delimiter, numberString] = this.extractDelimiter(numbers);
+
+    const parsedNumbers = this.parseNumbers(numberString, delimiter);
+
+    this.checkForNegatives(parsedNumbers)
+
+    return parsedNumbers.reduce((sum, current) => sum + current, 0);
+
+  }
+
+  extractDelimiter(numbers: string): [RegExp, string] {
+
     let delimiter = /,|\n/;
 
     if (numbers.startsWith("//")) {
@@ -19,19 +31,25 @@ export class StringCalculatorService {
       delimiter = new RegExp(numbers.substring(2, delimiterEndIndex));
       numbers = numbers.substring(delimiterEndIndex + 1);
     }
-    const numArray = numbers.split(delimiter);
-    const parsedNumbers = numArray.map(n => parseInt(n));
 
-    const negativeNumbers = parsedNumbers.filter(n => n < 0 )
+    return [delimiter, numbers]
 
-    console.log(negativeNumbers);
+  }
+
+  parseNumbers(numbers: string, delimiter: RegExp): number[] {
+
+    const numArray = numbers.split(delimiter).map(n => parseInt(n));
+    return numArray
+
+  }
+
+  checkForNegatives(parsedNumbers: number[]): void {
+
+    const negativeNumbers = parsedNumbers.filter(n => n < 0)
 
     if (negativeNumbers.length > 0) {
       throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(", ")}`);
     }
-
-
-    return parsedNumbers.reduce((sum, current) => sum + current, 0);
 
   }
 
