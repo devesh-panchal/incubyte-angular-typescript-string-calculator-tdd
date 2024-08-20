@@ -14,6 +14,10 @@
 
 ![tdd all test Passed](src/assets/test-case-imgs/all%20test%20cases%20-%20Passed.PNG)
 
+## Final Output Template data binding (negative throwing error will not allow to bind data , hence excuded)
+
+![output](src/assets/test-case-imgs/fe%20output.png)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
