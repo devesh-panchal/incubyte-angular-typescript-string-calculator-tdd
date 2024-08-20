@@ -20,7 +20,18 @@ export class StringCalculatorService {
       numbers = numbers.substring(delimiterEndIndex + 1);
     }
     const numArray = numbers.split(delimiter);
-    return numArray.reduce((sum, current) => sum + parseInt(current), 0); // Handle comma-separated numbers 
+    const parsedNumbers = numArray.map(n => parseInt(n));
+
+    const negativeNumbers = parsedNumbers.filter(n => n < 0 )
+
+    console.log(negativeNumbers);
+
+    if (negativeNumbers.length > 0) {
+      throw new Error(`Negative numbers not allowed: ${negativeNumbers.join(", ")}`);
+    }
+
+
+    return parsedNumbers.reduce((sum, current) => sum + current, 0);
 
   }
 
