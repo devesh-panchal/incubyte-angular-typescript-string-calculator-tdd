@@ -1,4 +1,19 @@
-# AngularStringCalculatorTdd
+# Incubyte Angular Typscript String Calculator Tdd
+
+## Coding assigment for string calculator project development through Test-Driven Development (TDD)
+
+## first inital test case Failed 
+
+![tdd first test Failed](src/assets/test-case-imgs/first%20test%20case%20-%20failed.PNG)
+
+## first inital test case Passed 
+
+![tdd first test Passed](src/assets/test-case-imgs/first%20test%20case%20-%20Passed.PNG)
+
+## All test case Passed 
+
+![tdd all test Passed](src/assets/test-case-imgs/all%20test%20cases%20-%20Passed.PNG)
+
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.18.
 
