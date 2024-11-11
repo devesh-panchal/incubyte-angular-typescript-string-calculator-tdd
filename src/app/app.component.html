@@ -1,17 +1,17 @@
 <h3>{{title}}</h3>
-<br>
-empty string ("") : {{stringCalculator.add("")}}
-<br>
-single number string ("2") : {{stringCalculator.add("2")}}
-<br>
-comma seprated number string ("1,2") : {{stringCalculator.add("1,2")}}
-<br>
-newlines as delimiters ("1\n2,3") : {{stringCalculator.add("1\n2,3")}}
-<br>
-custom delimiters ("//;\n1;2") : {{stringCalculator.add("//;\n1;2")}}
-<br>
-<!-- 
- below case will throw error & will fail to bind 
-negative numbers ("1,-2,3") : {{stringCalculator.add("1,-2,3")}}
-<br>
-negative numbers ("1,-2,-3") : {{stringCalculator.add("1,-2,-3")}} -->
+
+<textarea [(ngModel)]="stringCalCulator">
+
+</textarea>
+<button type="submit" (click)="calculate()">Submit</button>
+
+
+<div *ngIf="answer">
+
+    {{answer}}
+</div>
+
+<div *ngIf="showError">
+
+    {{errorMessage}}
+</div>
